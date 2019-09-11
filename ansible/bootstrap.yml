@@ -30,4 +30,6 @@
       - { candidate: maven, version: '3.3.9' }
 
 - import_playbook: playbooks/correct-antigen-theme.yml
+- import_playbook: playbooks/vscode-extensions.yml
+- import_playbook: playbooks/vundle.yml
 

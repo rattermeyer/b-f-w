@@ -18,3 +18,13 @@ all:
       - jq
       - httpie
       - rvm
+    vscode_extensions:
+      - DavidAnson.vscode-markdownlint
+      - joaompinto.asciidoctor-vscode
+      - ms-python.python
+      - ms-vscode.Go
+      - shd101wyy.markdown-preview-enhanced
+      - vscode-icons-team.vscode-icons
+      - vscoss.vscode-ansible
+      - yzhang.markdown-all-in-one
+      - ms-azuretools.vscode-docker
