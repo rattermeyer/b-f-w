@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+    - name: "enable copr"
+      command: dnf copr enable -y evana/fira-code-fonts
+      args:
+        warn: false
+      become: True
+
+    - name: "install fira code fonts"
+      dnf:
+        name: fira-code-fonts
+      become: True

@@ -2,7 +2,10 @@ all:
   hosts:
     localhost:
   vars:
-    username: rat
+    user:
+      name: "Richard Attermeyer"
+      email: "richard.attermeyer@opitz-consulting.com"
+    username: "{{ ansible_user_id }}"
     ansible_connection: local 
     os_packages:
       - vim
@@ -18,6 +21,8 @@ all:
       - jq
       - httpie
       - rvm
+      - vagrant
+      - vagrant-libvirt
     vscode_extensions:
       - DavidAnson.vscode-markdownlint
       - joaompinto.asciidoctor-vscode

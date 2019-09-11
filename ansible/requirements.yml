@@ -1,4 +1,6 @@
 ---
+- src: andrewrothstein.openshift-origin-client-tools
+  version: v1.0.10
 
 - src: ngetchell.vscode
   version: v1.0.1
@@ -10,12 +12,10 @@
   version: 1.6.1
  
 # not working as expected
+# needs a correct script
 - src: gantsign.antigen
   version: 1.3.2
 
-# old things - not sure if required
-- src: rattermeyer.vim
-  version: v0.1
 
 
   

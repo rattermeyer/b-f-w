@@ -1,0 +1,39 @@
+- hosts: localhost
+  tasks:
+    - name: "download repo file"
+      get_url:
+        url: http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+        dest: /etc/yum.repos.d/virtualbox.repo
+      become: True
+    - name: "install some packages"
+      dnf:
+        name: "{{ virtualbox_packages }}"
+      become: True
+    - name: add group to user
+      user:
+        name: "{{ username }}"
+        append: True
+        groups: vboxusers
+      become: True
+    - name: Check if vboxdrvs are loaded
+      command: /usr/lib/virtualbox/vboxdrv.sh status
+      register: vboxdrv_status
+      changed_when: False
+
+    - name: configure virtualbox drivers
+      command: /usr/lib/virtualbox/vboxdrv.sh setup
+      become: True
+      when: "'VirtualBox kernel modules (vboxdrv, vboxnetflt, vboxnetadp, vboxpci) are loaded' not in vboxdrv_status.stdout"
+  vars:
+    virtualbox_packages:
+      - gcc
+      - binutils
+      - make
+      - glibc-devel
+      - patch
+      - libgomp
+      - glibc-headers
+      - kernel-headers
+      - kernel-devel
+      - dkms
+      - VirtualBox-6.0

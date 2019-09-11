@@ -1,0 +1,6 @@
+- hosts: localhost
+  tasks:
+    - name: copy git config
+      template:
+        src: "gitconfig.j2"
+        dest: "/home/{{ username }}/.gitconfig"

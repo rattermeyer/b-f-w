@@ -1,0 +1,9 @@
+[user]
+	name = {{ user.name }}
+	email = {{ user.email | mandatory }}
+[merge]
+	tool = meld
+[core]
+	autocrlf = input
+[credential]
+	helper = store
