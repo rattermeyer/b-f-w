@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+    - name: correct entry in antigen-theme (remove)
+      lineinfile:
+        path: "/home/{{username}}/.antigen-etc/theme.zsh"
+        regexp: '^antigen theme'
+        state: absent
+    - name: correct entry in antigen-theme (add)
+      lineinfile:
+        path: "/home/{{username}}/.antigen-etc/theme.zsh"
+        line: "antigen theme robbyrussell/oh-my-zsh themes/agnoster"
+        state: present

@@ -1,0 +1,20 @@
+all:
+  hosts:
+    localhost:
+  vars:
+    username: rat
+    ansible_connection: local 
+    os_packages:
+      - vim
+      - tmux
+      - podman
+      - docker
+      - powerline
+      - powerline-fonts
+      - tig
+      - meld
+      - tmux
+      - java-11-openjdk-devel
+      - jq
+      - httpie
+      - rvm

@@ -1,0 +1,33 @@
+- import_playbook: playbooks/os_packages.yml
+- hosts: localhost
+  roles:
+  - name: gantsign.antigen
+    vars:
+      users:
+        - username: "{{ username }}"
+          antigen_libraries:
+            - name: oh-my-zsh
+          antigen_theme:
+            name: robbyrussell/oh-my-zsh themes/agnoster
+          antigen_bundles:
+            - name: ansible
+            - name: docker
+            - name: git
+            - name: mvn
+            - name: gradle
+            - name: npm
+            - name: tmux
+            - name: vscode
+            - name: httpie
+  - name: cmprescott.chrome
+    become: True
+  - name: ngetchell.vscode 
+    become: True
+  - name: comcast.sdkman
+    sdkman_user: "{{ username }}"
+    sdkman_install_packages:
+      - { candidate: gradle, version: '5.6.1' }
+      - { candidate: maven, version: '3.3.9' }
+
+- import_playbook: playbooks/correct-antigen-theme.yml
+
