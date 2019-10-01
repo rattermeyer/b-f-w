@@ -23,6 +23,10 @@ all:
       - rvm
       - vagrant
       - vagrant-libvirt
+      - cmake
+      - make
+      - python3-devel
+      - gcc-c++
     vscode_extensions:
       - DavidAnson.vscode-markdownlint
       - joaompinto.asciidoctor-vscode

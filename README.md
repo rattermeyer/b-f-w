@@ -1,3 +1,12 @@
+# Bootstrap for Fedora Workstations
+
+This small repo allows to easily setup most important utilities, I use on a fedora workstation.
+
+## Included
+
+### Additional OS Packages
+
+
 ## Manual instructions
 
 To enable "Fira Code" follow the instruction in this

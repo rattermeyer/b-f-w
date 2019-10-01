@@ -4,7 +4,7 @@
 set nocompatible              " be iMproved, required
 set number
 set showcmd
-set visualbell
+"set visualbell
 set gcr=a:blinkon0
 set hidden
 let mapleader=","
@@ -20,6 +20,8 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+map <C-t> :NERDTreeToggle<CR>
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -34,7 +36,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'reedes/vim-pencil'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'L9'
 Plugin 'tomasr/molokai'
 Plugin 'kien/ctrlp.vim'
@@ -82,6 +85,8 @@ autocmd FileType css setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType sass setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2  expandtab
+autocmd FileType yml setlocal shiftwidth=2 tabstop=2  expandtab
+autocmd FileType  setlocal shiftwidth=2 tabstop=2  expandtab
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
 " ================ Folds ============================
 
@@ -94,6 +99,7 @@ set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
+
 "
 " configuration of airline
 set laststatus=2
@@ -106,7 +112,7 @@ let g:airline_powerline_fonts = 1
 " Config pencil plugin
 augroup pencil
         autocmd!
-        autocmd FileType markdown,mkd call pencil#init()
+"        autocmd FileType markdown,mkd call pencil#init()
         autocmd FileType text         call pencil#init()
 augroup END
 " ================ Completion =======================
