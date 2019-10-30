@@ -3,7 +3,7 @@
 system_packages:
   - curl
   - findutils
-  - libselinux-python
+  - python3-libselinux
   - libstdc++
   - tar
   - unzip
