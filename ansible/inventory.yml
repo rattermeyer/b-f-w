@@ -37,3 +37,7 @@ all:
       - vscoss.vscode-ansible
       - yzhang.markdown-all-in-one
       - ms-azuretools.vscode-docker
+      - esbenp.prettier-vscode
+      - eamodio.gitlens
+      - editorconfig.editorconfig
+      - dart-code.flutter
