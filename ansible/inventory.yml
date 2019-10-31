@@ -27,6 +27,7 @@ all:
       - make
       - python3-devel
       - gcc-c++
+      - java-11-openjdk-devel 
     vscode_extensions:
       - DavidAnson.vscode-markdownlint
       - joaompinto.asciidoctor-vscode
