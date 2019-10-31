@@ -35,5 +35,7 @@
 - import_playbook: playbooks/correct-antigen-theme.yml
 - import_playbook: playbooks/vscode-extensions.yml
 - import_playbook: playbooks/vundle.yml
+- import_playbook: playbooks/nvm.yml
+- import_playbook: playbooks/java-alternative.yml
 #- import_playbook: playbooks/virtualbox.yml
 

@@ -1,0 +1,7 @@
+- hosts: localhost
+  tasks:
+  - name: upate java alternative
+    become: True
+    alternatives:
+      name: java
+      path: /usr/lib/jvm/java-11-openjdk-11.0.5.10-0.fc31.x86_64/bin/java
