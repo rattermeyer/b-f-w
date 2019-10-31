@@ -37,5 +37,6 @@
 - import_playbook: playbooks/vundle.yml
 - import_playbook: playbooks/nvm.yml
 - import_playbook: playbooks/java-alternative.yml
+- import_playbook: playbooks/intellij.yml
 #- import_playbook: playbooks/virtualbox.yml
 

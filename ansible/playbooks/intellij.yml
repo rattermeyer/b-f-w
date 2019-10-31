@@ -1,0 +1,21 @@
+- hosts: localhost
+  roles:
+    - name: "install intellij"
+      role: gantsign.intellij
+      intellij_edition: ultimate
+      users:
+        - username: "{{ ansible_user_id }}"
+          intellij_jdks:
+            - name: '11'
+              home: /usr/lib/jvm/java-11-openjdk
+          intellij_default_jdk: '11'
+          intellij_codestyles:
+            - name: java-google
+              url: https://raw.githubusercontent.com/google/styleguide/gh-pages/intellij-java-google-style.xml
+          intellij_default_codestyle: java-google
+          intellij_disabled_plugins:
+            - CVS
+            - com.intellij.uiDesigner
+            - org.jetbrains.android
+            - TestNG-J
+            - DevKit
