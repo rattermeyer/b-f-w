@@ -5,20 +5,19 @@
 - include: setup-debian.yml
   when: ansible_os_family == "Debian"
 
-- name: Install nvm {{ nvm_version }}
+- name: "Install nvm {{ nvm_version }}"
   git:
     repo: https://github.com/creationix/nvm.git
     dest: "{{ nvm_install_path }}"
     version: "{% if nvm_version!='HEAD' %}v{% endif %}{{ nvm_version }}"
   tags: nvm
 
-- name: Update {{ nvm_shell_init_file }} to source nvm
+- name: "Update {{ nvm_shell_init_file }} to source nvm"
   lineinfile:
     dest: "{{ item }}"
     line: . {{ nvm_install_path }}/nvm.sh
     create: yes
-  with_items: "{{ nvm_shell_init_files }}
-  tags: nvm
+  with_items: "{{ nvm_shell_init_files }}"
 
 - name: Install Node.js {{ nvm_node_version }}
   shell: . {{ nvm_shell_init_file }} && nvm install {{ nvm_node_version }}

@@ -1,0 +1,45 @@
+- import_playbook: playbooks/os_packages-ubuntu.yml
+  vars:
+    os_packages:
+      - vim
+      - tmux
+      - powerline
+      - fonts-powerline
+      - tig
+      - tmux
+      - openjdk-11-jdk
+      - jq
+      - httpie
+      - cmake
+      - make
+      - python3-dev
+      - g++
+- hosts: localhost
+  roles:
+  - name: gantsign.antigen
+    vars:
+      users:
+        - username: "{{ username }}"
+          antigen_libraries:
+            - name: oh-my-zsh
+          antigen_theme:
+            name: robbyrussell/oh-my-zsh themes/agnoster
+          antigen_bundles:
+            - name: ansible
+            - name: docker
+            - name: git
+            - name: mvn
+            - name: gradle
+            - name: npm
+            - name: tmux
+            - name: httpie
+  - name: andrewrothstein.openshift-origin-client-tools
+    oc_ver: v3.11.0
+      
+- import_playbook: playbooks/gitconfig.yml
+- import_playbook: playbooks/correct-antigen-theme.yml
+- import_playbook: playbooks/vundle.yml
+  #- import_playbook: playbooks/nvm-wsl.yml
+  #- import_playbook: playbooks/java-alternative.yml
+- import_playbook: playbooks/golang.yml
+
