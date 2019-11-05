@@ -1,0 +1,14 @@
+- hosts: localhost
+  tasks:
+    - name: ensure python3-psutils is installed
+      dnf:
+        name: python3-psutil
+      become: True
+    - name: setting gnome config
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      loop:
+        - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding", value: "'<Primary><Alt>t'"  }
+        - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command", value: "'gnome-terminal'" }
+        - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name", value: "'Terminal öffnen'" }

@@ -39,5 +39,6 @@
 - import_playbook: playbooks/java-alternative.yml
 - import_playbook: playbooks/intellij.yml
 - import_playbook: playbooks/golang.yml
+- import_playbook: playbooks/setup-gnome.yml
 #- import_playbook: playbooks/virtualbox.yml
 
