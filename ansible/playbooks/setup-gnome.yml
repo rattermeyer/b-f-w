@@ -1,7 +1,7 @@
 - hosts: localhost
   tasks:
     - name: ensure python3-psutils is installed
-      dnf:
+      package:
         name: python3-psutil
       become: True
     - name: setting gnome config

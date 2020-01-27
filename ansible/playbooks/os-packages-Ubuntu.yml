@@ -1,0 +1,19 @@
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+- name: "install os packages"
+  become: True
+  apt:
+    name: "{{ os_packages }}"
+  become: True
+
+- name: "install bat"
+  block:
+  - name: "download bat"
+    get_url:
+      url: "https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb"
+      dest: "{{ ansible_user_dir }}/Downloads"
+  - name: "install bat"
+    become: True
+    apt:
+      deb: "{{ ansible_user_dir }}/Downloads/bat_0.12.1_amd64.deb"
+

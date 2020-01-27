@@ -1,0 +1,20 @@
+os_packages:
+        - git
+        - tig
+        - silversearcher-ag
+        - neovim
+        - peco
+        - lnav
+        - jq
+        - httpie
+        - htop
+        - aria2
+        - powertop
+        - thefuck
+        - googler
+        - powerline
+        - tmux
+        - nnn
+        - mc
+        - ranger
+        - zsh

@@ -1,14 +1,5 @@
 - hosts: localhost
-  tasks:
+  roles:
     - name: install go
-      package:
-        name: 
-        - go
-        - dep
-      become: True
-
-    - name: create workspace directory
-      file:
-        path: "{{ ansible_user_dir }}/go"
-        state: directory
-
+      role: gantsign.golang
+      golang_gopath: '$HOME/go'

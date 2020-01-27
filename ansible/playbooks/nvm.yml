@@ -1,23 +1,5 @@
 - hosts: localhost
-  pre_tasks:
-  - name: install dependencies
-    become: True
-    dnf:
-      name: 
-      - git
-      - curl
-      - openssl-devel
-      - make 
-      - automake 
-      - gcc 
-      - gcc-c++ 
-      - kernel-devel
-      
   roles:
-  - name: install nvm
-    role: local.nvm
-    nvm_shell_init_file: ~/.bashrc
-    nvm_shell_init_files: 
-    - ~/.zshrc
-    - ~/.bashrc
+  - name: "install nvm"
+    role: stephdewit.nvm
 

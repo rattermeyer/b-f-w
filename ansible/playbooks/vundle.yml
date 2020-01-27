@@ -1,5 +1,10 @@
 - hosts: localhost
   tasks:
+    - name: Install vim
+      become: True
+      package:
+        name: vim
+
     - name: Install Vundle
       git: 
          repo: https://github.com/gmarik/Vundle.vim.git 

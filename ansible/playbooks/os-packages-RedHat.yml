@@ -1,0 +1,4 @@
+- name: "install os packages"
+  dnf:
+    name: "{{ os_packages }}"
+  become: True
