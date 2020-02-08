@@ -2,21 +2,28 @@
 - name: create IntelliJ IDEA user config directory
   become: yes
   file:
-    dest: '~{{ item.username }}/{{ intellij_user_dir }}/config'
+    dest: '~{{ user.username }}/{{ intellij_user_dir }}/config'
     state: directory
-    owner: '{{ item.username }}'
-    group: '{{ item.username }}'
+    owner: '{{ user.username }}'
+    group: '{{ user.intellij_group | default(user.username) }}'
     mode: 'ug=rwx,o=rx'
   with_items: '{{ users }}'
+  loop_control:
+    loop_var: user
+    label: '{{ user.username }}'
 
 - name: install license key
+  become: yes
   copy:
-    src: '{{ item.intellij_license_key_path }}'
-    dest: '~{{ item.username }}/{{ intellij_user_dir }}/config/idea.key'
-    owner: '{{ item.username }}'
-    group: '{{ item.username }}'
+    src: '{{ user.intellij_license_key_path }}'
+    dest: '~{{ user.username }}/{{ intellij_user_dir }}/config/idea.key'
+    owner: '{{ user.username }}'
+    group: '{{ user.intellij_group | default(user.username) }}'
     mode: 'ug=rw,o=r'
   with_items: '{{ users }}'
+  loop_control:
+    loop_var: user
+    label: '{{ user.username }}'
   when:
-    - item.intellij_license_key_path is defined
-    - item.intellij_license_key_path not in ('', None, omit)
+    - user.intellij_license_key_path is defined
+    - user.intellij_license_key_path not in ('', None, omit)

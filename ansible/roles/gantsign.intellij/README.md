@@ -15,7 +15,7 @@ install particular plugins take a look at our companion role:
 Requirements
 ------------
 
-* Ansible >= 2.6
+* Ansible >= 2.7
 
 * Linux Distribution
 
@@ -23,7 +23,6 @@ Requirements
 
         * Ubuntu
 
-            * Trusty (14.04)
             * Xenial (16.04)
             * Bionic (18.04)
 
@@ -37,6 +36,22 @@ Requirements
 
 * Java JDK
 
+    * You need to install the JDK src as well as the JDK.
+    * When using Java > 9 you also need to install the jmods.
+
+    e.g. the following is required if using OpenJDK 11 with CentOS:
+
+    ```yml
+    - name: Install OpenJDK 11
+      become: true
+      yum:
+        name:
+          - java-11-openjdk-devel
+          - java-11-openjdk-jmods
+          - java-11-openjdk-src
+        state: present
+    ```
+
 * Apache Maven
 
 Role Variables
@@ -47,7 +62,7 @@ are shown below):
 
 ```yaml
 # IntelliJ IDEA version number
-intellij_version: '2019.2.4'
+intellij_version: '2019.3.2'
 
 # Mirror where to dowload IntelliJ IDEA redistributable package from
 # Using HTTP because of https://github.com/ansible/ansible/issues/11579
@@ -81,6 +96,7 @@ Users are configured as follows:
 ```yaml
 users:
   - username: # Unix user name
+    intellij_group: # Unix group for the user's files/directories (optional - defaults to username)
     intellij_jdks:
       - name: # The name use want to use for this JDK
         home: # The path to the JDK home.
@@ -114,6 +130,9 @@ The following versions of IntelliJ IDEA are supported without any additional
 configuration (for other versions follow the Advanced Configuration
 instructions):
 
+* `2019.3.2`
+* `2019.3.1`
+* `2019.3`
 * `2019.2.4`
 * `2019.2.3`
 * `2019.2.2`

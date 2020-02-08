@@ -13,8 +13,8 @@ def test_idea_installed(host):
 
 @pytest.mark.parametrize('file_path,expected_text', [
     ('disabled_plugins.txt', 'org.jetbrains.plugins.gradle'),
-    ('options/jdk.table.xml', '/usr/lib/jvm/java-11-openjdk'),
-    ('options/jdk.table.xml', '/usr/lib/jvm/java-1.7.0-openjdk'),
+    ('options/jdk.table.xml', '/usr/lib64/jvm/java-11-openjdk'),
+    ('options/jdk.table.xml', '/usr/lib64/jvm/java-1.8.0-openjdk'),
     ('options/project.default.xml', '/test/maven/home'),
     ('codestyles/GoogleStyle.xml', 'code_scheme name="GoogleStyle"'),
     ('options/code.style.schemes',
@@ -49,7 +49,7 @@ def test_plugins_installed(host, plugin_dir_name):
     assert plugin_dir.exists
     assert plugin_dir.is_directory
     assert plugin_dir.user == 'test_usr'
-    assert plugin_dir.group == 'test_usr'
+    assert plugin_dir.group == 'users'
     assert plugin_dir.mode == 0o755
 
 
@@ -70,5 +70,5 @@ def test_jar_plugin_installed(host):
     assert plugin_file.exists
     assert plugin_file.is_file
     assert plugin_file.user == 'test_usr'
-    assert plugin_file.group == 'test_usr'
+    assert plugin_file.group == 'users'
     assert plugin_file.mode == 0o664
