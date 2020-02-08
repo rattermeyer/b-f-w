@@ -1,6 +1,7 @@
 # Bootstrap for Fedora Workstations
 
-This small repo allows to easily setup most important utilities, I use on a fedora workstation.
+This small repo allows to easily setup most important utilities, I use on a
+fedora workstation.
 
 ## Included
 
