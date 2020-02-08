@@ -1,5 +1,5 @@
 - hosts: localhost
   roles:
-        - name: install java
-          role: geerlingguy.java
-          become: yes
+    - name: install java
+      role: geerlingguy.java
+      become: yes

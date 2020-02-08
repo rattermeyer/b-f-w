@@ -2,4 +2,4 @@
   roles:
     - name: install go
       role: gantsign.golang
-      golang_gopath: '$HOME/go'
+      golang_gopath: "$HOME/go"

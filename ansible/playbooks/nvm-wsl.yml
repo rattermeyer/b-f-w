@@ -1,22 +1,22 @@
 - hosts: localhost
   pre_tasks:
-  - name: install dependencies
-    become: True
-    apt:
-      name:
-      - git
-      - curl
-      - openssl
-      - libssl-dev
-      - make
-      - automake
-      - gcc
-      - g++
+    - name: install dependencies
+      become: True
+      apt:
+        name:
+          - git
+          - curl
+          - openssl
+          - libssl-dev
+          - make
+          - automake
+          - gcc
+          - g++
 
   roles:
-  - name: install nvm
-    role: local.nvm
-    nvm_shell_init_file: ~/.bashrc
-    nvm_shell_init_files:
-    - ~/.zshrc
-    - ~/.bashrc
+    - name: install nvm
+      role: local.nvm
+      nvm_shell_init_file: ~/.bashrc
+      nvm_shell_init_files:
+        - ~/.zshrc
+        - ~/.bashrc

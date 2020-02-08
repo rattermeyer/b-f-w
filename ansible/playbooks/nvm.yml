@@ -1,4 +1,4 @@
 - hosts: localhost
   roles:
-  - name: "install nvm"
-    role: stephdewit.nvm
+    - name: "install nvm"
+      role: stephdewit.nvm

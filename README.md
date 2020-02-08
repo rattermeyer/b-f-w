@@ -6,12 +6,10 @@ This small repo allows to easily setup most important utilities, I use on a fedo
 
 ### Additional OS Packages
 
-
 ## Manual instructions
 
 To enable "Fira Code" follow the instruction in this
 [Blog](https://tahoeninjas.blog/2019/03/16/setting-fira-code-as-your-default-visual-studio-code-font/)
-
 
 ## TODO
 

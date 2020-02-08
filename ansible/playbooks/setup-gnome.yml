@@ -9,6 +9,15 @@
         key: "{{ item.key }}"
         value: "{{ item.value }}"
       loop:
-        - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding", value: "'<Primary><Alt>t'"  }
-        - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command", value: "'gnome-terminal'" }
-        - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name", value: "'Terminal öffnen'" }
+        - {
+            key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding",
+            value: "'<Primary><Alt>t'",
+          }
+        - {
+            key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command",
+            value: "'gnome-terminal'",
+          }
+        - {
+            key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name",
+            value: "'Terminal öffnen'",
+          }

@@ -1,9 +1,9 @@
 - hosts: localhost
   tasks:
-  - name: "install os packages"
-    import_tasks: os-packages-RedHat.yml
-    when: "ansible_distribution == 'RedHat'"
+    - name: "install os packages"
+      import_tasks: os-packages-RedHat.yml
+      when: "ansible_distribution == 'RedHat'"
 
-  - name: "install os packages"
-    import_tasks: os-packages-Ubuntu.yml
-    when: "ansible_distribution == 'Ubuntu'"
+    - name: "install os packages"
+      import_tasks: os-packages-Ubuntu.yml
+      when: "ansible_distribution == 'Ubuntu'"
