@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+  - name: "install pip3"
+    become: True
+    package:
+      name: python3-pip
+  - name: "install pre-commit hook management"
+    become: True
+    pip:
+      name: pre-commit
