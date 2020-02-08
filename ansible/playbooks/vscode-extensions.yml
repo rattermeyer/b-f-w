@@ -5,5 +5,3 @@
     with_items: "{{ vscode_extensions }}"
     register: vscode_result
     changed_when: "'already installed' not in vscode_result.stdout"
-
-  

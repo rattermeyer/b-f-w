@@ -19,7 +19,7 @@
 
     - name: download fragments
       get_url:
-        url: "https://raw.githubusercontent.com/github/gitignore/master/Global/{{ item }}" 
+        url: "https://raw.githubusercontent.com/github/gitignore/master/Global/{{ item }}"
         dest: "{{ fragments_path }}"
       with_items: "{{ gitignores }}"
 
@@ -50,5 +50,3 @@
       - Vim.gitignore
       - VirtualEnv.gitignore
       - VisualStudioCode.gitignore
-
-

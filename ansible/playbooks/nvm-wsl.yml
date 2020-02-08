@@ -3,21 +3,20 @@
   - name: install dependencies
     become: True
     apt:
-      name: 
+      name:
       - git
       - curl
       - openssl
       - libssl-dev
-      - make 
-      - automake 
-      - gcc 
+      - make
+      - automake
+      - gcc
       - g++
-      
+
   roles:
   - name: install nvm
     role: local.nvm
     nvm_shell_init_file: ~/.bashrc
-    nvm_shell_init_files: 
+    nvm_shell_init_files:
     - ~/.zshrc
     - ~/.bashrc
-

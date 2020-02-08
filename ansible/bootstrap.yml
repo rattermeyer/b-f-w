@@ -35,7 +35,7 @@
       - username: "{{ username }}"
   - name: cmprescott.chrome
     become: True
-  - name: ngetchell.vscode 
+  - name: ngetchell.vscode
     become: True
   - name: comcast.sdkman
     sdkman_user: "{{ username }}"
@@ -44,7 +44,7 @@
       - { candidate: maven, version: '3.3.9' }
   - name: andrewrothstein.openshift-origin-client-tools
     oc_ver: v3.11.0
-      
+
 - import_playbook: playbooks/gitconfig.yml
   #- import_playbook: playbooks/correct-antigen-theme.yml
 - import_playbook: playbooks/vscode-extensions.yml
@@ -55,4 +55,3 @@
 - import_playbook: playbooks/golang.yml
 - import_playbook: playbooks/setup-gnome.yml
 #- import_playbook: playbooks/virtualbox.yml
-

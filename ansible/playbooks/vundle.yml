@@ -6,8 +6,8 @@
         name: vim
 
     - name: Install Vundle
-      git: 
-         repo: https://github.com/gmarik/Vundle.vim.git 
+      git:
+         repo: https://github.com/gmarik/Vundle.vim.git
          dest: "/home/{{ username}}/.vim/bundle/Vundle.vim"
     - name: copy vimrc
       copy:
