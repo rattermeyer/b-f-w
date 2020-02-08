@@ -6,7 +6,7 @@ all:
       name: "Richard Attermeyer"
       email: "richard.attermeyer@opitz-consulting.com"
     username: "{{ ansible_user_id }}"
-    ansible_connection: local 
+    ansible_connection: local
     os_packages:
       - vim
       - tmux
@@ -27,7 +27,8 @@ all:
       - make
       - python3-devel
       - gcc-c++
-      - java-11-openjdk-devel 
+      - java-11-openjdk-devel
+      - shellcheck
     vscode_extensions:
       - DavidAnson.vscode-markdownlint
       - joaompinto.asciidoctor-vscode
@@ -42,3 +43,4 @@ all:
       - eamodio.gitlens
       - editorconfig.editorconfig
       - dart-code.flutter
+      - timonwong.shellcheck
