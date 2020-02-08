@@ -2,7 +2,6 @@ os_packages:
         - git
         - tig
         - silversearcher-ag
-        - neovim
         - peco
         - lnav
         - jq
@@ -18,3 +17,4 @@ os_packages:
         - mc
         - ranger
         - zsh
+        - shellcheck
