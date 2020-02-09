@@ -30,7 +30,9 @@ all:
       - java-11-openjdk-devel
       - shellcheck
     vscode_extensions:
+      - visualstudioexptteam.vscodeintellicode
       - DavidAnson.vscode-markdownlint
+      - dbaeumer.vscode-eslint
       - joaompinto.asciidoctor-vscode
       - ms-python.python
       - ms-vscode.Go
@@ -39,8 +41,10 @@ all:
       - vscoss.vscode-ansible
       - yzhang.markdown-all-in-one
       - ms-azuretools.vscode-docker
+      - ms-kubernetes-tools.vscode-kubernetes-tools
       - esbenp.prettier-vscode
       - eamodio.gitlens
       - editorconfig.editorconfig
       - dart-code.flutter
       - timonwong.shellcheck
+      - dracula-theme.theme-dracula
