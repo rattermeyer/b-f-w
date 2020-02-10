@@ -8,6 +8,14 @@ Richard Attermeyer <richard.attermeyer@gmail.com>
 
 B-F-W (Bootstrap for Workstation) is a project to quickly setup a workding Linux desktop (development) environment on Fedora and Ubuntu.
 
+== Configuring the sytem
+
+== Running the scripts
+
+* all at once
+* single playbooks
+* playbook organizations
+
 == Components installed
 
 === Command line tools
@@ -74,14 +82,33 @@ https://wiki.ubuntuusers.de/tree/[tree] is a simple Linux utility to display the
 └── trusted.gpg.d
 ....
 
-=== pgcli
+==== pgcli
 Because the default database in my projects is Postgres, it is always a good idea to have a postgresl client at your fingertips.
 https://www.pgcli.com/[Pgcli] is a command line interface for Postgres with auto-completion and syntax highlighting.
 We also provide a GUI tool (pgadmin4) in this setup.
 
-=== byoby / tmux
+==== byoby / tmux
 https://byobu.org/[Byobu] includes enhanced profiles and convenient keybindings, configuration utilities and toggle-able system status notification for https://github.com/tmux/tmux/wiki[tmux].
 You can simply use byobu wherever you would use tmux.
+
+==== mtr
+
+https://www.bitwizard.nl/mtr/[mtr] combines the functionality of `traceroute` and ping in a single diagnostic tool.
+
+Not answering to ping does not mean, the host is not reachable.
+
+==== htop
+
+https://hisham.hm/htop/[htop] is an interactive, text-mode process viewer for Unix systems based on ncurses.
+
+image::https://hisham.hm/htop/htop-2.0.png[Htop screenshot]
+* htop (open)
+
+==== aria2
+
+https://aria2.github.io/[aria2] is a multi-protocol command line download utility.
+
+
 
 
 * add-gitignore (open)
@@ -94,8 +121,6 @@ You can simply use byobu wherever you would use tmux.
 * how2 (open)
 * dracula theme for zsh (open)
 * fzf (open)
-* htop (open)
-* mtr (instead of tracerout, open)
 * aria2 (open)
 * asciinema (open)
 
@@ -148,12 +173,17 @@ To profit, install the firefox and chromium extensions (open).
 
 === DevOps (misc)
 
+Without Ansible this whole project won't work. So of course, we install
+Ansible into your machine.
+
+* ansible
+* ansible-lint
+
+
 * vagrant
 * Virtualbox
 * libvirt
 * virt-manager
-* ansible
-* ansible-lint
 
 === Docker and the like
 
@@ -170,13 +200,23 @@ To profit, install the firefox and chromium extensions (open).
 
 === git and configurations
 
-* git
-* git-config
-* git-credentials
-* global git ignores
-* pre-commit
-* tig
-* meld
+The default version control system is `git`.
+A default `.gitconfig` is placed in the user home directory at `~/.gitconfig`
+
+It is configured with
+
+* `user.name` and `user.email` as specified in the `inventory.yml` file.
+* The merge tool is set to `meld`
+* a global `.gitignore` file is specified and placed in the user home directory
+* The default editor for commit message is `vim`
+* CRLF behavior is set to `input`, as https://git-scm.com/book/it/v2/Customizing-Git-Git-Configuration[recommended]
+* Git is configured to https://git-scm.com/docs/git-credential-store[store] entered _username_ and _password_.
+
+As a command line git GUI https://jonas.github.io/tig/[tig] is installed, which is an ncurses-based text-mode interface for git. You can easily browse, stage and commit changes using tig.
+
+The global `.gitignore` file is assembled using different parts of the https://github.com/github/gitignore[gitignore] repository and specified via the
+`gitignores` variable in the `inventory.yml`.
+
 
 === Shell and activated plugins
 
@@ -233,3 +273,14 @@ We support a lot of the installed tools with oh-my-zsh plugins.
 
 
 === Additional GUI programs
+
+
+=== UI and common theme
+
+To allow different parts of the system to show the same theme, we install
+https://draculatheme.com/[dracula theme] plugins for
+
+* Visual Studio Code
+* Vim
+* zsh (command line terminal)
+* IntelliJ (built-in)
