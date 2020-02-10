@@ -1,0 +1,22 @@
+- hosts: localhost
+  tasks:
+    - name: "ensure flathub remote is available"
+      become: True
+      flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    - name: "install vorta"
+      become: True
+      flatpak:
+        name: com.borgbase.Vorta
+    - name: "install borgmatic"
+      become: True
+      pip:
+        name:
+          - borgmatic
+
+    - name: "install timeshift"
+      import_tasks: backup-timeshift-Ubuntu.yml
+      when: "ansible_distribution == 'Ubuntu'"

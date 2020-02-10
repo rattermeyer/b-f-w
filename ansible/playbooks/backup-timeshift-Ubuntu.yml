@@ -1,0 +1,10 @@
+- name: "Add timeshift repository"
+  become: yes
+  apt_repository:
+    repo: "ppa:teejee2008/timeshift"
+    state: present
+
+- name: "Install Timeshift"
+  become: yes
+  apt:
+    name: timeshift
