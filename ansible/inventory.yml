@@ -10,6 +10,7 @@ all:
     os_packages:
       - vim
       - tmux
+      - byobu
       - podman
       - docker
       - powerline
@@ -27,8 +28,10 @@ all:
       - make
       - python3-devel
       - gcc-c++
-      - java-11-openjdk-devel
       - shellcheck
+      - tree
+      - pgcli
+      - borgbackup
     vscode_extensions:
       - visualstudioexptteam.vscodeintellicode
       - DavidAnson.vscode-markdownlint
@@ -48,3 +51,16 @@ all:
       - dart-code.flutter
       - timonwong.shellcheck
       - dracula-theme.theme-dracula
+    gitignores:
+      - Ansible.gitignore
+      - Backup.gitignore
+      - Diff.gitignore
+      - Eclipse.gitignore
+      - Emacs.gitignore
+      - JetBrains.gitignore
+      - NetBeans.gitignore
+      - SublimeText.gitignore
+      - Vagrant.gitignore
+      - Vim.gitignore
+      - VirtualEnv.gitignore
+      - VisualStudioCode.gitignore
