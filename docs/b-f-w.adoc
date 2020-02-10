@@ -186,7 +186,49 @@ the best tools available.
 Therefore we install https://github.com/ohmyzsh/ohmyzsh[`oh-my-zsh`] as the default shell for the user.
 Oh-my-zsh has lots of plugins that make it easy to customize your shell to your liking.
 
-* oh-my-zsh
+We support a lot of the installed tools with oh-my-zsh plugins.
+
+.Plugins
+|===
+|Plugin | why included
+
+|docker
+|Auto-complete argumeents and options
+
+|kubectl
+|Autocompletion
+
+|oc
+|Autocompletion for OpenShift cmd line interface
+
+|mvn
+|Standard build tool for Java projects
+
+|gradle
+|autocompletion of task names and option switches
+
+|npm
+|autocompletion for npm
+
+|nvm
+|to support the node version manager
+
+|https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#vscode[vscode]
+|Visual Studio code extra commands
+
+
+|httpie
+|Completion for httpie
+
+|ng
+|Completion for `angular-cli`
+
+|vagrant
+|autocompletion for Bagrant commands, task names, box names
+
+|===
+
+
 * powerline
 
 
