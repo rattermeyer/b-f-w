@@ -1,0 +1,22 @@
+- hosts: localhost
+  roles:
+    - name: gantsign.oh-my-zsh
+      users:
+        - username: "{{ username }}"
+          oh_my_zsh:
+            theme: agnoster
+            plugins:
+              - ansible
+              - git
+              - docker
+              - mvn
+              - gradle
+              - npm
+              - tmux
+              - vscode
+              - httpie
+              - kubectl
+              - npm
+              - nvm
+              - ng
+              - vagrant
