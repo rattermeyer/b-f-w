@@ -1,20 +1,28 @@
 os_packages:
   - git
   - tig
+  - meld
   - silversearcher-ag
   - peco
   - lnav
   - jq
   - httpie
   - htop
-  - aria2
   - powertop
+  - aria2
   - thefuck
   - googler
   - powerline
   - tmux
-  - nnn
+  - byobu
+  - powerline
+  - powerline-fonts
   - mc
-  - ranger
   - zsh
   - shellcheck
+  - rvm
+  - tree
+  - pgcli
+  - borgbackup
+  - nnn
+  - ranger
