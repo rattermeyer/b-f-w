@@ -62,7 +62,7 @@ are shown below):
 
 ```yaml
 # IntelliJ IDEA version number
-intellij_version: '2019.3.2'
+intellij_version: '2020.1.2'
 
 # Mirror where to dowload IntelliJ IDEA redistributable package from
 # Using HTTP because of https://github.com/ansible/ansible/issues/11579
@@ -130,6 +130,11 @@ The following versions of IntelliJ IDEA are supported without any additional
 configuration (for other versions follow the Advanced Configuration
 instructions):
 
+* `2020.1.2`
+* `2020.1.1`
+* `2020.1`
+* `2019.3.4`
+* `2019.3.3`
 * `2019.3.2`
 * `2019.3.1`
 * `2019.3`
@@ -320,9 +325,13 @@ This role exports the following Ansible facts for use by other roles:
 
     * e.g. `/usr/share/applications/jetbrains-idea-ce.desktop`
 
-* `ansible_local.intellij.general.user_dirname`
+* `ansible_local.intellij.general.user_config_dir`
 
-    * e.g. `.IdeaIC2016.2`
+    * e.g. `.IdeaIC2016.2/config`
+
+* `ansible_local.intellij.general.user_plugins_dir`
+
+    * e.g. `.IdeaIC2016.2/config/plugins`
 
 More Roles From GantSign
 ------------------------

@@ -28,7 +28,8 @@ def test_idea_installed(host):
      'option name="PROJECT_PROFILE" value="GantSign"')
 ])
 def test_config_files(host, file_path, expected_text):
-    config_dir_pattern = '\\.(IdeaIC|IntelliJIdea)[0-9]+\\.[0-9]/config$'
+    config_dir_pattern = (
+        '\\.config/JetBrains/(IdeaIC|IntelliJIdea)[0-9]+\\.[0-9]$')
     config_home = host.check_output('find %s | grep --color=never -E %s',
                                     '/home/test_usr',
                                     config_dir_pattern)
@@ -40,12 +41,13 @@ def test_config_files(host, file_path, expected_text):
     'lombok-plugin'
 ])
 def test_plugins_installed(host, plugin_dir_name):
-    config_dir_pattern = '\\.(IdeaIC|IntelliJIdea)[0-9]+\\.[0-9]/config$'
-    config_home = host.check_output('find %s | grep --color=never -E %s',
-                                    '/home/test_usr',
-                                    config_dir_pattern)
-    plugin_dir = host.file(config_home + '/plugins/' + plugin_dir_name)
+    plugins_dir_pattern = (
+        '\\.local/share/JetBrains/(IdeaIC|IntelliJIdea)[0-9]+\\.[0-9]$')
+    plugins_path = host.check_output('find %s | grep --color=never -E %s',
+                                     '/home/test_usr',
+                                     plugins_dir_pattern)
 
+    plugin_dir = host.file(plugins_path + '/' + plugin_dir_name)
     assert plugin_dir.exists
     assert plugin_dir.is_directory
     assert plugin_dir.user == 'test_usr'
@@ -54,15 +56,14 @@ def test_plugins_installed(host, plugin_dir_name):
 
 
 def test_jar_plugin_installed(host):
-    config_dir_pattern = '\\.(IdeaIC|IntelliJIdea)[0-9]+\\.[0-9]/config$'
-    config_home = host.check_output('find %s | grep --color=never -E %s',
-                                    '/home/test_usr',
-                                    config_dir_pattern)
-
-    plugins_dir = config_home + '/plugins/'
+    plugins_dir_pattern = (
+        '\\.local/share/JetBrains/(IdeaIC|IntelliJIdea)[0-9]+\\.[0-9]$')
+    plugins_path = host.check_output('find %s | grep --color=never -E %s',
+                                     '/home/test_usr',
+                                     plugins_dir_pattern)
 
     plugin_path = host.check_output('find %s | grep --color=never -E %s',
-                                    plugins_dir,
+                                    plugins_path,
                                     'save-actions.*\\.jar')
 
     plugin_file = host.file(plugin_path)

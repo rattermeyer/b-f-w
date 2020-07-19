@@ -1,25 +1,34 @@
 ---
 language: python
-python: "2.7"
-
-sudo: required
+python: "3.6"
+os: linux
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
 
 install:
-  - pip install ansible
+  - pip install ansible ansible-lint
+
+# I had to temporary disable this cleanup in 'before_script'
+# as installation doesn't work as expected
+
+#before_script:
+  # Remove already installed nvm
+  #- nvm deactivate
+  #- nvm unload
+  #- rm -rf ~/.nvm
 
 script:
   # Check syntax
   - ansible-playbook -i "localhost," test.yml --syntax-check
+  - ansible-lint .
 
   # First run
-  - ansible-playbook -i "localhost," -c local test.yml --extra-vars "nvm_install_path=~/.nvmbis"
+  - ansible-playbook -i "localhost," -c local test.yml --extra-vars "ansible_python_interpreter=auto nvm_install_path=~/.nvmbis"
 
   # Second run
   - >
-    ansible-playbook -i "localhost," -c local test.yml --extra-vars "nvm_install_path=~/.nvmbis"
+    ansible-playbook -i "localhost," -c local test.yml --extra-vars "ansible_python_interpreter=auto nvm_install_path=~/.nvmbis"
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)

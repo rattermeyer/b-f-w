@@ -8,7 +8,7 @@ env:
 
 # Spin off separate builds for each of the following versions
 # of Ansible and Linux.
-matrix:
+jobs:
   include:
     - env:
         - MOLECULEW_ANSIBLE=2.7.15
@@ -61,9 +61,16 @@ matrix:
     - env:
         - MOLECULEW_ANSIBLE=2.9.1
         - MOLECULE_SCENARIO=ubuntu-max-go-eol
-
-# Require the standard build environment
-sudo: required
+    - env:
+        - MOLECULEW_ANSIBLE=2.9.1
+        - MOLECULE_SCENARIO=default
+      arch:
+        - arm64
+    - env:
+        - MOLECULEW_ANSIBLE=2.9.1
+        - MOLECULE_SCENARIO=ubuntu-max-go-eol
+      arch:
+        - arm64
 
 # Require Ubuntu 16.04
 dist: xenial

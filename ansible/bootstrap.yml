@@ -1,47 +1,15 @@
 - import_playbook: playbooks/os-packages.yml
 - hosts: localhost
   roles:
-    #- name: gantsign.antigen
-    #vars:
-    #users:
-    #- username: "{{ username }}"
-    #antigen_libraries:
-    #  - name: oh-my-zsh
-    #antigen_theme:
-    #  name: robbyrussell/oh-my-zsh themes/agnoster
-    #antigen_bundles:
-    #  - name: ansible
-    #  - name: docker
-    #  - name: git
-    #  - name: mvn
-    #  - name: gradle
-    #  - name: npm
-    #  - name: tmux
-    #  - name: vscode
-    #  - name: httpie
-    #
-    #  - name: manala.ohmyzsh
-    #    manala_ohmyzsh_dir: "{{ username }}/.oh-my-zsh"
-    #    manala_ohmyzsh_users:
-    #    - user:  "{{ username }}"
-    #      group: "{{ username }}"
-    #      template: users/default.{{ env }}.j2
-    #      config:
-    #      - ZSH_THEME: default.prod
-    #      - plugins: (ansible docker git mvn gradle npm tmux vscode httpie)
-    #
-    - name: cmprescott.chrome
-      become: True
     - name: ngetchell.vscode
       become: True
     - name: comcast.sdkman
       sdkman_user: "{{ username }}"
       sdkman_install_packages:
-        - { candidate: gradle, version: "5.6.1" }
-        - { candidate: maven, version: "3.3.9" }
+        - { candidate: gradle, version: "6.5.1" }
+        - { candidate: maven, version: "3.6.3" }
     - name: andrewrothstein.openshift-origin-client-tools
       oc_ver: v3.11.0
-
 - import_playbook: playbooks/oh-my-zsh.yml
 - import_playbook: playbooks/gitconfig.yml
   #- import_playbook: playbooks/correct-antigen-theme.yml
