@@ -14,7 +14,7 @@ all:
       - podman
       - docker
       - powerline
-      - powerline-fonts
+      - fonts-powerline
       - tig
       - meld
       - tmux
@@ -32,13 +32,14 @@ all:
       - tree
       - pgcli
       - borgbackup
+      - silversearcher-ag
     vscode_extensions:
       - visualstudioexptteam.vscodeintellicode
       - DavidAnson.vscode-markdownlint
       - dbaeumer.vscode-eslint
       - joaompinto.asciidoctor-vscode
       - ms-python.python
-      - ms-vscode.Go
+      - golang.Go
       - shd101wyy.markdown-preview-enhanced
       - vscode-icons-team.vscode-icons
       - vscoss.vscode-ansible
@@ -51,6 +52,15 @@ all:
       - dart-code.flutter
       - timonwong.shellcheck
       - dracula-theme.theme-dracula
+      - hediet.vscode-drawio
+      - ritwickdey.LiveServer
+      - msjsdiag.debugger-for-chrome
+      - redhat.vscode-yaml
+      - johnpapa.Angular2
+      - ms-vscode-remote.remote-ssh
+      - humao.rest-client
+      - xabikos.ReactSnippets
+      - mtxr.sqltools
     gitignores:
       - Ansible.gitignore
       - Backup.gitignore

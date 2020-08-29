@@ -2,3 +2,4 @@
   roles:
     - name: "install nvm"
       role: stephdewit.nvm
+      become: True

@@ -3,6 +3,8 @@
     - name: "install intellij"
       role: gantsign.intellij
       intellij_edition: ultimate
+      intellij_version: '2020.2.1'
+      intellij_redis_sha256sum: 'cfa491b9831eed8649b32f047c6ddbb4722c0c0b019f343adbaf497831bee5a9'
       users:
         - username: "{{ ansible_user_id }}"
           #intellij_jdks:

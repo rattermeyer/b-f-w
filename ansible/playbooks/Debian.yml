@@ -12,17 +12,17 @@ os_packages:
   - aria2
   - thefuck
   - googler
-  - powerline
   - tmux
-  - byobu
   - powerline
-  - powerline-fonts
+  - fonts-powerline
   - mc
   - zsh
   - shellcheck
-  - rvm
   - tree
   - pgcli
   - borgbackup
+  - restic
   - nnn
   - ranger
+  - cmake
+
