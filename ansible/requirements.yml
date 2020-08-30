@@ -30,3 +30,6 @@
 
 - src: geerlingguy.java
   version: 1.10.0
+
+- src: geerlingguy.docker
+  version: 2.8.2

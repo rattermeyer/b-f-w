@@ -1,0 +1,7 @@
+- hosts: localhost
+  roles:
+    - name: install docker
+      role: geerlingguy.docker
+      become: True
+      docker_users:
+        - "{{ username }}"
