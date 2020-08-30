@@ -25,4 +25,5 @@ os_packages:
   - nnn
   - ranger
   - cmake
-
+  - bat
+  - chromium-browser

@@ -33,6 +33,8 @@ all:
       - pgcli
       - borgbackup
       - silversearcher-ag
+      - chromium-browser
+      - bat
     vscode_extensions:
       - visualstudioexptteam.vscodeintellicode
       - DavidAnson.vscode-markdownlint
