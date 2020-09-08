@@ -27,3 +27,4 @@ os_packages:
   - cmake
   - bat
   - chromium-browser
+  - graphviz

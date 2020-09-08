@@ -1,0 +1,16 @@
+- hosts: localhost
+  roles:
+    - name: install and configure sdman
+      role: comcast.sdkman
+      sdkman_user: "{{ username }}"
+      sdkman_auto_answer: true
+      sdkman_update: true
+      sdkman_install_packages:
+        - { candidate: java, version: 11.0.8.hs-adpt }
+        - { candidate: java, version: 14.0.2.hs-adpt }
+        - { candidate: gradle, version: 6.6.1 }
+        - { candidate: maven, version: 3.6.3 }
+      sdkman_defaults:
+        java: 11.0.8.hs-adpt
+        gradle: 6.6.1
+        maven: 3.6.3

@@ -63,6 +63,7 @@ all:
       - humao.rest-client
       - xabikos.ReactSnippets
       - mtxr.sqltools
+      - atlassian.atlascode
     gitignores:
       - Ansible.gitignore
       - Backup.gitignore
