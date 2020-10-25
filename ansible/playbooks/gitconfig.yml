@@ -1,5 +1,10 @@
 - hosts: localhost
   tasks:
+    - name: install git-commit-template
+      copy:
+        src: git-commit-template.txt
+        dest: "/home/{{ username }}/.git-commit-template.txt"
+
     - name: copy git config
       template:
         src: "gitconfig.j2"
