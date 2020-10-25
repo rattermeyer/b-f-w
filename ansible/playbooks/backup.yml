@@ -1,5 +1,14 @@
 - hosts: localhost
   tasks:
+    - name: install borgbackup ppa
+      become: True
+      apt_repository:
+        repo: ppa:costamagnagianfranco/borgbackup
+    - name: install borgbackup
+      become: True
+      apt:
+        name: borgbackup
+
     - name: "ensure flathub remote is available"
       become: True
       flatpak_remote:

@@ -179,6 +179,14 @@ Ansible into your machine.
 * ansible
 * ansible-lint
 
+We also prepare the different IDEs for Ansible
+
+|===
+|IDE | Plugin / Extension
+
+| VIM
+| 'chase/vim-ansible-yaml'
+|===
 
 * vagrant
 * Virtualbox
