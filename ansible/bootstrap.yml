@@ -13,11 +13,9 @@
 - import_playbook: playbooks/oh-my-zsh.yml
 - import_playbook: playbooks/gitconfig.yml
   #- import_playbook: playbooks/correct-antigen-theme.yml
-- import_playbook: playbooks/vscode-extensions.yml
+  #- import_playbook: playbooks/vscode-extensions.yml
 - import_playbook: playbooks/vundle.yml
 - import_playbook: playbooks/nvm.yml
 - import_playbook: playbooks/java.yml
 - import_playbook: playbooks/intellij.yml
 - import_playbook: playbooks/golang.yml
-- import_playbook: playbooks/setup-gnome.yml
-#- import_playbook: playbooks/virtualbox.yml

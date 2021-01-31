@@ -60,6 +60,3 @@ sdkman_offline_mode: false
 # Link SDKMAN installed packages
 # Reference: https://linux.die.net/man/8/update-alternatives
 sdkman_update_alternatives: []
-
-# shell to execute sdkman install script
-sdkman_install_shell: /bin/zsh

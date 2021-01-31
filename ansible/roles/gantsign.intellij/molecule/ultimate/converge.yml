@@ -3,6 +3,12 @@
   hosts: all
 
   pre_tasks:
+    - name: update apt cache
+      apt:
+        update_cache: yes
+      changed_when: no
+      when: "ansible_pkg_mgr == 'apt'"
+
     - name: create test users
       become: yes
       user:
@@ -26,13 +32,7 @@
         name: openjdk-8-jdk-headless
         state: present
 
-    - name: install jdk 8 source
-      become: yes
-      apt:
-        name: openjdk-8-source
-        state: present
-
-    - name: create java directory
+    - name: create java installation directory
       become: yes
       file:
         state: directory
@@ -43,7 +43,7 @@
 
     - name: download jdk 11
       get_url:
-        url: 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk11?openjdk_impl=hotspot&os=linux&arch=x64&release=jdk-11.0.6%2B10&type=jdk'
+        url: 'https://api.adoptopenjdk.net/v3/binary/version/jdk-11.0.6%2B10/linux/x64/jdk/hotspot/normal/adoptopenjdk?project=jdk'
         dest: '/opt/java/jdk-11.0.6.tar.gz'
         force: no
         use_proxy: yes
@@ -59,6 +59,7 @@
         dest: '/opt/java'
         owner: root
         group: root
+        mode: 'o-w'
         creates: '/opt/java/jdk-11.0.6+10/bin'
 
     - name: set facts for openjdk locations
@@ -69,7 +70,7 @@
   roles:
     - role: ansible-role-intellij
       intellij_default_maven_home: '/test/maven/home'
-      intellij_edition: community
+      intellij_edition: ultimate
       users:
         - username: test_usr
           intellij_jdks:

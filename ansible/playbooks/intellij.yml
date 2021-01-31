@@ -3,14 +3,9 @@
     - name: "install intellij"
       role: gantsign.intellij
       intellij_edition: ultimate
-      intellij_version: '2020.2.1'
-      intellij_redis_sha256sum: 'cfa491b9831eed8649b32f047c6ddbb4722c0c0b019f343adbaf497831bee5a9'
+      intellij_version: '2020.3.2'
       users:
         - username: "{{ ansible_user_id }}"
-          #intellij_jdks:
-          #  - name: '11'
-          #    home: '/usr/lib/jvm/java-11-openjdk-11.0.5.10-0.fc31.x86_64'
-          #intellij_default_jdk: '11'
           intellij_codestyles:
             - name: java-google
               url: https://raw.githubusercontent.com/google/styleguide/gh-pages/intellij-java-google-style.xml
