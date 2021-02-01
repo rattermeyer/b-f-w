@@ -1,8 +1,8 @@
 - import_playbook: playbooks/os-packages.yml
 - hosts: localhost
   roles:
-    - name: ngetchell.vscode
-      become: True
+    #  - name: ngetchell.vscode
+    #    become: True
     - name: comcast.sdkman
       sdkman_user: "{{ username }}"
       sdkman_install_packages:
@@ -19,3 +19,6 @@
 - import_playbook: playbooks/java.yml
 - import_playbook: playbooks/intellij.yml
 - import_playbook: playbooks/golang.yml
+- import_playbook: playbooks/pre-commit.yml
+- import_playbook: playbooks/path-config.yml
+
